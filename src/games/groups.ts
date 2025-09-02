@@ -9,40 +9,39 @@ export type GameGroup = {
 export const gameGroups: GameGroup[] = [
   {
     id: 'couples',
-    titleKey: 'groups.couples',
+    titleKey: 'couples',
     games: [
-      {id: 'betterTogether', titleKey: 'games.betterTogether'},
-      {id: 'karleksguide', titleKey: 'games.karleksguide'},
-      {id: 'couplesChat', titleKey: 'games.couplesChat'},
+      {id: 'betterTogether', titleKey: 'betterTogether'},
+      {id: 'karleksguide', titleKey: 'karleksguide'},
+      {id: 'couplesChat', titleKey: 'couplesChat'},
     ],
   },
   {
     id: 'friendsParty',
-    titleKey: 'groups.friendsParty',
+    titleKey: 'friendsParty',
     games: [
-      {id: 'questionsForHumans', titleKey: 'games.questionsForHumans'},
-      {id: 'beHonestOrGetDrunk', titleKey: 'games.beHonestOrGetDrunk'},
-      {id: 'drunkedApp', titleKey: 'games.drunkedApp'},
-      {id: 'neverHaveIEver', titleKey: 'games.neverHaveIEver'},
+      {id: 'questionsForHumans', titleKey: 'questionsForHumans'},
+      {id: 'beHonestOrGetDrunk', titleKey: 'beHonestOrGetDrunk'},
+      {id: 'drunkedApp', titleKey: 'drunkedApp'},
+      {id: 'neverHaveIEver', titleKey: 'neverHaveIEver'},
     ],
   },
   {
     id: 'selfGrowth',
-    titleKey: 'groups.selfGrowth',
+    titleKey: 'selfGrowth',
     games: [
-      {id: 'discoverYourself', titleKey: 'games.discoverYourself'},
-      {id: 'substance', titleKey: 'games.substance'},
-      {id: 'mindfulTalk', titleKey: 'games.mindfulTalk'},
+      {id: 'discoverYourself', titleKey: 'discoverYourself'},
+      {id: 'substance', titleKey: 'substance'},
+      {id: 'mindfulTalk', titleKey: 'mindfulTalk'},
     ],
   },
   {
     id: 'familyGeneral',
-    titleKey: 'groups.familyGeneral',
+    titleKey: 'familyGeneral',
     games: [
-      {id: 'smileTalk', titleKey: 'games.smileTalk'},
-      {id: 'howWellDoYouKnowMe', titleKey: 'games.howWellDoYouKnowMe'},
-      {id: 'riddleMeThis', titleKey: 'games.riddleMeThis'},
+      {id: 'smileTalk', titleKey: 'smileTalk'},
+      {id: 'howWellDoYouKnowMe', titleKey: 'howWellDoYouKnowMe'},
+      {id: 'riddleMeThis', titleKey: 'riddleMeThis'},
     ],
   },
 ];
-

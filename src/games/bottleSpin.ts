@@ -7,7 +7,6 @@ const categories = [
 
 export const bottleSpin: GameDef = {
   id: 'bottleSpin',
-  titleKey: 'games.bottleSpin',
+  titleKey: 'bottleSpin',
   categories,
 };
-

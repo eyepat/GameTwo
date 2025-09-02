@@ -8,7 +8,6 @@ const categories = [
 
 export const wouldYouRather: GameDef = {
   id: 'wouldYouRather',
-  titleKey: 'games.wouldYouRather',
+  titleKey: 'wouldYouRather',
   categories,
 };
-

@@ -11,7 +11,6 @@ const categories = [
 
 export const neverHaveIEver: GameDef = {
   id: 'neverHaveIEver',
-  titleKey: 'games.neverHaveIEver',
+  titleKey: 'neverHaveIEver',
   categories,
 };
-

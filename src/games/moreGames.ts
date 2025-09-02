@@ -4,73 +4,72 @@ const singleCategory = [{ id: 'general', title: 'General', dataFile: 'general.js
 
 export const betterTogether: GameDef = {
   id: 'betterTogether',
-  titleKey: 'games.betterTogether',
+  titleKey: 'betterTogether',
   categories: singleCategory,
 };
 
 export const karleksguide: GameDef = {
   id: 'karleksguide',
-  titleKey: 'games.karleksguide',
+  titleKey: 'karleksguide',
   categories: singleCategory,
 };
 
 export const couplesChat: GameDef = {
   id: 'couplesChat',
-  titleKey: 'games.couplesChat',
+  titleKey: 'couplesChat',
   categories: singleCategory,
 };
 
 export const questionsForHumans: GameDef = {
   id: 'questionsForHumans',
-  titleKey: 'games.questionsForHumans',
+  titleKey: 'questionsForHumans',
   categories: singleCategory,
 };
 
 export const beHonestOrGetDrunk: GameDef = {
   id: 'beHonestOrGetDrunk',
-  titleKey: 'games.beHonestOrGetDrunk',
+  titleKey: 'beHonestOrGetDrunk',
   categories: singleCategory,
 };
 
 export const drunkedApp: GameDef = {
   id: 'drunkedApp',
-  titleKey: 'games.drunkedApp',
+  titleKey: 'drunkedApp',
   categories: singleCategory,
 };
 
 export const discoverYourself: GameDef = {
   id: 'discoverYourself',
-  titleKey: 'games.discoverYourself',
+  titleKey: 'discoverYourself',
   categories: singleCategory,
 };
 
 export const substance: GameDef = {
   id: 'substance',
-  titleKey: 'games.substance',
+  titleKey: 'substance',
   categories: singleCategory,
 };
 
 export const mindfulTalk: GameDef = {
   id: 'mindfulTalk',
-  titleKey: 'games.mindfulTalk',
+  titleKey: 'mindfulTalk',
   categories: singleCategory,
 };
 
 export const smileTalk: GameDef = {
   id: 'smileTalk',
-  titleKey: 'games.smileTalk',
+  titleKey: 'smileTalk',
   categories: singleCategory,
 };
 
 export const howWellDoYouKnowMe: GameDef = {
   id: 'howWellDoYouKnowMe',
-  titleKey: 'games.howWellDoYouKnowMe',
+  titleKey: 'howWellDoYouKnowMe',
   categories: singleCategory,
 };
 
 export const riddleMeThis: GameDef = {
   id: 'riddleMeThis',
-  titleKey: 'games.riddleMeThis',
+  titleKey: 'riddleMeThis',
   categories: singleCategory,
 };
-

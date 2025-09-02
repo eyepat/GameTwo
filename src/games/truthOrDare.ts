@@ -20,7 +20,6 @@ const categories: Category[] = [
 
 export const truthOrDare: GameDef = {
   id: 'truthOrDare',
-  titleKey: 'games.truthOrDare',
+  titleKey: 'truthOrDare',
   categories,
 };
-
