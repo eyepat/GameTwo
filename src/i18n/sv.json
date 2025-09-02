@@ -22,7 +22,24 @@
     "truthOrDare": "Sanning eller Konsekvens",
     "neverHaveIEver": "Jag har aldrig",
     "bottleSpin": "Snurra flaskan",
-    "wouldYouRather": "Skulle du hellre"
+    "wouldYouRather": "Skulle du hellre",
+    "betterTogether": "Bättre tillsammans",
+    "karleksguide": "Kärleksguide",
+    "couplesChat": "Par-chatt",
+    "questionsForHumans": "Frågor för människor",
+    "beHonestOrGetDrunk": "Var ärlig eller bli full",
+    "drunkedApp": "Fylle-app",
+    "discoverYourself": "Upptäck dig själv",
+    "substance": "Substans",
+    "mindfulTalk": "Medvetna samtal",
+    "smileTalk": "Smile Talk (för barn/teens)",
+    "howWellDoYouKnowMe": "Hur väl känner du mig?",
+    "riddleMeThis": "Gissa detta (gåtor)"
+  },
+  "groups": {
+    "couples": "Par & relationer",
+    "friendsParty": "Vänner & fest",
+    "selfGrowth": "Självutveckling & reflektion",
+    "familyGeneral": "Familj & allmänt"
   }
 }
-

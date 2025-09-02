@@ -87,6 +87,43 @@ const data: Record<string, Record<string, LangMap>> = {
       sv: require('../categories/wouldYouRather/hard.sv.json'),
     },
   },
+  // New groups' games: fallback to EN only for now
+  betterTogether: {
+    general: { en: require('../categories/betterTogether/general.json') },
+  },
+  karleksguide: {
+    general: { en: require('../categories/karleksguide/general.json') },
+  },
+  couplesChat: {
+    general: { en: require('../categories/couplesChat/general.json') },
+  },
+  questionsForHumans: {
+    general: { en: require('../categories/questionsForHumans/general.json') },
+  },
+  beHonestOrGetDrunk: {
+    general: { en: require('../categories/beHonestOrGetDrunk/general.json') },
+  },
+  drunkedApp: {
+    general: { en: require('../categories/drunkedApp/general.json') },
+  },
+  discoverYourself: {
+    general: { en: require('../categories/discoverYourself/general.json') },
+  },
+  substance: {
+    general: { en: require('../categories/substance/general.json') },
+  },
+  mindfulTalk: {
+    general: { en: require('../categories/mindfulTalk/general.json') },
+  },
+  smileTalk: {
+    general: { en: require('../categories/smileTalk/general.json') },
+  },
+  howWellDoYouKnowMe: {
+    general: { en: require('../categories/howWellDoYouKnowMe/general.json') },
+  },
+  riddleMeThis: {
+    general: { en: require('../categories/riddleMeThis/general.json') },
+  },
 };
 
 export function getCategoryContent(gameId: string, categoryId: string): string[] {

@@ -22,7 +22,24 @@
     "truthOrDare": "Truth or Dare",
     "neverHaveIEver": "Never Have I Ever",
     "bottleSpin": "Spin the Bottle",
-    "wouldYouRather": "Would You Rather"
+    "wouldYouRather": "Would You Rather",
+    "betterTogether": "Better Together",
+    "karleksguide": "Love Guide",
+    "couplesChat": "Couples Chat",
+    "questionsForHumans": "Questions for Humans",
+    "beHonestOrGetDrunk": "Be Honest or Get Drunk",
+    "drunkedApp": "Drunked App",
+    "discoverYourself": "Discover Yourself",
+    "substance": "Substance",
+    "mindfulTalk": "Mindful Talk",
+    "smileTalk": "Smile Talk (kids/teens)",
+    "howWellDoYouKnowMe": "How well do you know me?",
+    "riddleMeThis": "Riddle me this"
+  },
+  "groups": {
+    "couples": "Couples",
+    "friendsParty": "Friends & Party",
+    "selfGrowth": "Self Growth & Reflection",
+    "familyGeneral": "Family & General"
   }
 }
-

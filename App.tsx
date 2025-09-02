@@ -8,11 +8,15 @@ import GameListScreen from './src/screens/GameListScreen';
 import CategoryListScreen from './src/screens/CategoryListScreen';
 import GameplayScreen from './src/screens/GameplayScreen';
 import {initI18n} from './src/i18n/i18n';
+import MainCategoriesScreen from './src/screens/MainCategoriesScreen';
+import GroupGamesScreen from './src/screens/GroupGamesScreen';
 
 initI18n();
 
 export type RootStackParamList = {
   PlayerSetup: undefined;
+  MainCategories: undefined;
+  GroupGames: {groupId: string};
   GameList: undefined;
   CategoryList: {gameId: string};
   Gameplay: {gameId: string; categoryId: string; title: string};
@@ -29,6 +33,8 @@ export default function App() {
       <NavigationContainer>
         <Stack.Navigator initialRouteName="PlayerSetup">
           <Stack.Screen name="PlayerSetup" component={PlayerSetupScreen} options={{title: ''}} />
+          <Stack.Screen name="MainCategories" component={MainCategoriesScreen} options={{title: ''}} />
+          <Stack.Screen name="GroupGames" component={GroupGamesScreen} options={{title: ''}} />
           <Stack.Screen name="GameList" component={GameListScreen} options={{title: ''}} />
           <Stack.Screen name="CategoryList" component={CategoryListScreen} options={{title: ''}} />
           <Stack.Screen name="Gameplay" component={GameplayScreen} options={{title: ''}} />

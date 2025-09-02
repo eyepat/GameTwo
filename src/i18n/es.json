@@ -22,7 +22,24 @@
     "truthOrDare": "Verdad o Reto",
     "neverHaveIEver": "Yo Nunca Nunca",
     "bottleSpin": "Gira la Botella",
-    "wouldYouRather": "¿Qué prefieres?"
+    "wouldYouRather": "¿Qué prefieres?",
+    "betterTogether": "Mejor juntos",
+    "karleksguide": "Guía del amor",
+    "couplesChat": "Chat para parejas",
+    "questionsForHumans": "Preguntas para humanos",
+    "beHonestOrGetDrunk": "Sé honesto o emborráchate",
+    "drunkedApp": "App de borrachos",
+    "discoverYourself": "Descúbrete",
+    "substance": "Sustancia",
+    "mindfulTalk": "Charla consciente",
+    "smileTalk": "Smile Talk (niños/adolescentes)",
+    "howWellDoYouKnowMe": "¿Qué tanto me conoces?",
+    "riddleMeThis": "Adivíname esto"
+  },
+  "groups": {
+    "couples": "Parejas y relaciones",
+    "friendsParty": "Amigos y fiesta",
+    "selfGrowth": "Crecimiento personal y reflexión",
+    "familyGeneral": "Familia y general"
   }
 }
-

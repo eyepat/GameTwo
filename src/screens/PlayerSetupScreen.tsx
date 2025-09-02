@@ -7,6 +7,8 @@ import type {NativeStackScreenProps} from '@react-navigation/native-stack';
 
 type RootStackParamList = {
   PlayerSetup: undefined;
+  MainCategories: undefined;
+  GroupGames: {groupId: string};
   GameList: undefined;
   CategoryList: {gameId: string};
   Gameplay: {gameId: string; categoryId: string; title: string};
@@ -25,7 +27,7 @@ export default function PlayerSetupScreen({navigation}: Props) {
       <View style={{height: 16}} />
       <Button
         title={t('startGame')}
-        onPress={() => navigation.replace('GameList')}
+        onPress={() => navigation.replace('MainCategories')}
         disabled={players.length === 0}
       />
     </View>
@@ -36,4 +38,3 @@ const styles = StyleSheet.create({
   container: {flex: 1, padding: 16, gap: 8},
   title: {fontSize: 22, fontWeight: '700', marginBottom: 8},
 });
-
