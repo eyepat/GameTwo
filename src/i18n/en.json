@@ -1,0 +1,28 @@
+{
+  "appTitle": "Party Games",
+  "playerSetupTitle": "Add Players",
+  "enterPlayerName": "Enter player name",
+  "addPlayer": "Add",
+  "startGame": "Start",
+  "gamesTitle": "Choose a Game",
+  "categoriesTitle": "Choose a Category",
+  "premium": "Premium",
+  "purchase": "Purchase",
+  "restorePurchases": "Restore purchases",
+  "selectLanguage": "Language",
+  "settings": "Settings",
+  "next": "Next",
+  "another": "Another",
+  "currentPlayer": "Current: {{name}}",
+  "lockedCategory": "This category is premium.",
+  "unlock": "Unlock",
+  "cancel": "Cancel",
+  "playersRequired": "Add at least one player",
+  "games": {
+    "truthOrDare": "Truth or Dare",
+    "neverHaveIEver": "Never Have I Ever",
+    "bottleSpin": "Spin the Bottle",
+    "wouldYouRather": "Would You Rather"
+  }
+}
+

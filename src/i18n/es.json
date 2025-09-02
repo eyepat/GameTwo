@@ -1,0 +1,28 @@
+{
+  "appTitle": "Juegos de Fiesta",
+  "playerSetupTitle": "Agregar jugadores",
+  "enterPlayerName": "Nombre del jugador",
+  "addPlayer": "Agregar",
+  "startGame": "Comenzar",
+  "gamesTitle": "Elige un juego",
+  "categoriesTitle": "Elige una categoría",
+  "premium": "Premium",
+  "purchase": "Comprar",
+  "restorePurchases": "Restaurar compras",
+  "selectLanguage": "Idioma",
+  "settings": "Ajustes",
+  "next": "Siguiente",
+  "another": "Otra",
+  "currentPlayer": "Turno: {{name}}",
+  "lockedCategory": "Esta categoría es premium.",
+  "unlock": "Desbloquear",
+  "cancel": "Cancelar",
+  "playersRequired": "Agrega al menos un jugador",
+  "games": {
+    "truthOrDare": "Verdad o Reto",
+    "neverHaveIEver": "Yo Nunca Nunca",
+    "bottleSpin": "Gira la Botella",
+    "wouldYouRather": "¿Qué Prefieres?"
+  }
+}
+

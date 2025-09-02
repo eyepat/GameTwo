@@ -1,0 +1,28 @@
+{
+  "appTitle": "Partyspel",
+  "playerSetupTitle": "Lägg till spelare",
+  "enterPlayerName": "Ange spelarens namn",
+  "addPlayer": "Lägg till",
+  "startGame": "Start",
+  "gamesTitle": "Välj ett spel",
+  "categoriesTitle": "Välj en kategori",
+  "premium": "Premium",
+  "purchase": "Köp",
+  "restorePurchases": "Återställ köp",
+  "selectLanguage": "Språk",
+  "settings": "Inställningar",
+  "next": "Nästa",
+  "another": "En till",
+  "currentPlayer": "Tur: {{name}}",
+  "lockedCategory": "Den här kategorin är premium.",
+  "unlock": "Lås upp",
+  "cancel": "Avbryt",
+  "playersRequired": "Lägg till minst en spelare",
+  "games": {
+    "truthOrDare": "Sanning eller Konsekvens",
+    "neverHaveIEver": "Jag har aldrig",
+    "bottleSpin": "Snurra flaskan",
+    "wouldYouRather": "Skulle du hellre"
+  }
+}
+
