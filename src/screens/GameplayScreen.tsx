@@ -1,9 +1,10 @@
-import React, {useEffect, useMemo, useState} from 'react';
-import {View, Text, StyleSheet, Button} from 'react-native';
+import React, {useEffect, useLayoutEffect, useMemo, useState} from 'react';
+import {View, Text, StyleSheet, Button, TouchableOpacity} from 'react-native';
 import type {NativeStackScreenProps} from '@react-navigation/native-stack';
 import {getCategoryContent} from '../games/content';
 import {getCurrentPlayerName, usePlayerStore} from '../store/playerStore';
 import {useTranslation} from 'react-i18next';
+import SettingsModal from '../components/SettingsModal';
 
 type RootStackParamList = {
   PlayerSetup: undefined;
@@ -18,13 +19,24 @@ function getRandom<T>(arr: T[]) {
   return arr[Math.floor(Math.random() * arr.length)];
 }
 
-export default function GameplayScreen({route}: Props) {
+export default function GameplayScreen({route, navigation}: Props) {
   const {gameId, categoryId, title} = route.params;
   const {t} = useTranslation();
   const content = useMemo(() => getCategoryContent(gameId, categoryId), [gameId, categoryId, t]);
   const [current, setCurrent] = useState<string | undefined>(() => getRandom(content));
   const nextPlayer = usePlayerStore(s => s.nextPlayer);
   const currentPlayer = getCurrentPlayerName();
+  const [settingsOpen, setSettingsOpen] = useState(false);
+
+  useLayoutEffect(() => {
+    navigation.setOptions({
+      headerRight: () => (
+        <TouchableOpacity onPress={() => setSettingsOpen(true)}>
+          <Text style={{fontSize: 18}}>⚙️</Text>
+        </TouchableOpacity>
+      ),
+    });
+  }, [navigation]);
 
   useEffect(() => {
     // when language/content changes, pick a new current item
@@ -48,6 +60,7 @@ export default function GameplayScreen({route}: Props) {
         <Button title={t('another')} onPress={() => setCurrent(getRandom(content))} />
         <Button title={t('next')} onPress={next} />
       </View>
+      <SettingsModal visible={settingsOpen} onClose={() => setSettingsOpen(false)} />
     </View>
   );
 }

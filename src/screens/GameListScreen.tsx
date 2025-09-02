@@ -1,10 +1,10 @@
-import React from 'react';
+import React, {useLayoutEffect, useState} from 'react';
 import {View, Text, FlatList, StyleSheet, TouchableOpacity} from 'react-native';
 import {useTranslation} from 'react-i18next';
 import {games} from '../games';
 import GameCard from '../components/GameCard';
 import type {NativeStackScreenProps} from '@react-navigation/native-stack';
-import i18n from '../i18n/i18n';
+import SettingsModal from '../components/SettingsModal';
 
 type RootStackParamList = {
   PlayerSetup: undefined;
@@ -15,26 +15,25 @@ type RootStackParamList = {
 
 type Props = NativeStackScreenProps<RootStackParamList, 'GameList'>;
 
-const languages: {code: string; label: string}[] = [
-  {code: 'en', label: 'EN'},
-  {code: 'sv', label: 'SV'},
-  {code: 'es', label: 'ES'},
-];
-
 export default function GameListScreen({navigation}: Props) {
   const {t} = useTranslation();
+  const [settingsOpen, setSettingsOpen] = useState(false);
+
+  useLayoutEffect(() => {
+    navigation.setOptions({
+      headerRight: () => (
+        <TouchableOpacity onPress={() => setSettingsOpen(true)}>
+          <Text style={{fontSize: 18}}>⚙️</Text>
+        </TouchableOpacity>
+      ),
+    });
+  }, [navigation]);
 
   return (
     <View style={styles.container}>
       <View style={styles.header}>
         <Text style={styles.title}>{t('gamesTitle')}</Text>
-        <View style={styles.langRow}>
-          {languages.map(l => (
-            <TouchableOpacity key={l.code} onPress={() => i18n.changeLanguage(l.code)}>
-              <Text style={[styles.lang, i18n.language === l.code && styles.langActive]}>{l.label}</Text>
-            </TouchableOpacity>
-          ))}
-        </View>
+        <View style={styles.langRow} />
       </View>
       <FlatList
         data={games}
@@ -46,6 +45,7 @@ export default function GameListScreen({navigation}: Props) {
           />
         )}
       />
+      <SettingsModal visible={settingsOpen} onClose={() => setSettingsOpen(false)} />
     </View>
   );
 }
@@ -55,7 +55,4 @@ const styles = StyleSheet.create({
   title: {fontSize: 22, fontWeight: '700'},
   header: {flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', marginBottom: 8},
   langRow: {flexDirection: 'row', gap: 8},
-  lang: {paddingHorizontal: 8, paddingVertical: 4, borderWidth: 1, borderColor: '#ddd', borderRadius: 6},
-  langActive: {backgroundColor: '#eee', fontWeight: '700'},
 });
-
