@@ -1,60 +1,98 @@
-/* Static content mapping so Metro can bundle JSON files */
+/* Static content mapping per language so Metro can bundle JSON files */
+import i18n from '../i18n/i18n';
+
+type LangMap = {en: string[]; es?: string[]; sv?: string[]};
+
+const data: Record<string, Record<string, LangMap>> = {
+  truthOrDare: {
+    family: {
+      en: require('../categories/truthOrDare/family.json'),
+      es: require('../categories/truthOrDare/family.es.json'),
+      sv: require('../categories/truthOrDare/family.sv.json'),
+    },
+    friends: {
+      en: require('../categories/truthOrDare/friends.json'),
+      es: require('../categories/truthOrDare/friends.es.json'),
+      sv: require('../categories/truthOrDare/friends.sv.json'),
+    },
+    party: {
+      en: require('../categories/truthOrDare/party.json'),
+      es: require('../categories/truthOrDare/party.es.json'),
+      sv: require('../categories/truthOrDare/party.sv.json'),
+    },
+    daring: {
+      en: require('../categories/truthOrDare/daring.json'),
+      es: require('../categories/truthOrDare/daring.es.json'),
+      sv: require('../categories/truthOrDare/daring.sv.json'),
+    },
+  },
+  neverHaveIEver: {
+    family: {
+      en: require('../categories/neverHaveIEver/family.json'),
+      es: require('../categories/neverHaveIEver/family.es.json'),
+      sv: require('../categories/neverHaveIEver/family.sv.json'),
+    },
+    friends: {
+      en: require('../categories/neverHaveIEver/friends.json'),
+      es: require('../categories/neverHaveIEver/friends.es.json'),
+      sv: require('../categories/neverHaveIEver/friends.sv.json'),
+    },
+    daring: {
+      en: require('../categories/neverHaveIEver/daring.json'),
+      es: require('../categories/neverHaveIEver/daring.es.json'),
+      sv: require('../categories/neverHaveIEver/daring.sv.json'),
+    },
+    action: {
+      en: require('../categories/neverHaveIEver/action.json'),
+      es: require('../categories/neverHaveIEver/action.es.json'),
+      sv: require('../categories/neverHaveIEver/action.sv.json'),
+    },
+    drunk: {
+      en: require('../categories/neverHaveIEver/drunk.json'),
+      es: require('../categories/neverHaveIEver/drunk.es.json'),
+      sv: require('../categories/neverHaveIEver/drunk.sv.json'),
+    },
+    sexual: {
+      en: require('../categories/neverHaveIEver/sexual.json'),
+      es: require('../categories/neverHaveIEver/sexual.es.json'),
+      sv: require('../categories/neverHaveIEver/sexual.sv.json'),
+    },
+  },
+  bottleSpin: {
+    classic: {
+      en: require('../categories/bottleSpin/classic.json'),
+      es: require('../categories/bottleSpin/classic.es.json'),
+      sv: require('../categories/bottleSpin/classic.sv.json'),
+    },
+    party: {
+      en: require('../categories/bottleSpin/party.json'),
+      es: require('../categories/bottleSpin/party.es.json'),
+      sv: require('../categories/bottleSpin/party.sv.json'),
+    },
+  },
+  wouldYouRather: {
+    family: {
+      en: require('../categories/wouldYouRather/family.json'),
+      es: require('../categories/wouldYouRather/family.es.json'),
+      sv: require('../categories/wouldYouRather/family.sv.json'),
+    },
+    funny: {
+      en: require('../categories/wouldYouRather/funny.json'),
+      es: require('../categories/wouldYouRather/funny.es.json'),
+      sv: require('../categories/wouldYouRather/funny.sv.json'),
+    },
+    hard: {
+      en: require('../categories/wouldYouRather/hard.json'),
+      es: require('../categories/wouldYouRather/hard.es.json'),
+      sv: require('../categories/wouldYouRather/hard.sv.json'),
+    },
+  },
+};
 
 export function getCategoryContent(gameId: string, categoryId: string): string[] {
-  // Truth or Dare
-  if (gameId === 'truthOrDare') {
-    switch (categoryId) {
-      case 'family':
-        return require('../categories/truthOrDare/family.json');
-      case 'friends':
-        return require('../categories/truthOrDare/friends.json');
-      case 'party':
-        return require('../categories/truthOrDare/party.json');
-      case 'daring':
-        return require('../categories/truthOrDare/daring.json');
-    }
-  }
-
-  // Never Have I Ever
-  if (gameId === 'neverHaveIEver') {
-    switch (categoryId) {
-      case 'family':
-        return require('../categories/neverHaveIEver/family.json');
-      case 'friends':
-        return require('../categories/neverHaveIEver/friends.json');
-      case 'daring':
-        return require('../categories/neverHaveIEver/daring.json');
-      case 'action':
-        return require('../categories/neverHaveIEver/action.json');
-      case 'drunk':
-        return require('../categories/neverHaveIEver/drunk.json');
-      case 'sexual':
-        return require('../categories/neverHaveIEver/sexual.json');
-    }
-  }
-
-  // Spin the Bottle
-  if (gameId === 'bottleSpin') {
-    switch (categoryId) {
-      case 'classic':
-        return require('../categories/bottleSpin/classic.json');
-      case 'party':
-        return require('../categories/bottleSpin/party.json');
-    }
-  }
-
-  // Would You Rather
-  if (gameId === 'wouldYouRather') {
-    switch (categoryId) {
-      case 'family':
-        return require('../categories/wouldYouRather/family.json');
-      case 'funny':
-        return require('../categories/wouldYouRather/funny.json');
-      case 'hard':
-        return require('../categories/wouldYouRather/hard.json');
-    }
-  }
-
-  return [];
+  const lang = (i18n.language || 'en').split('-')[0];
+  const game = data[gameId];
+  const category = game?.[categoryId];
+  if (!category) return [];
+  return category[(lang as 'en' | 'es' | 'sv')] || category.en;
 }
-

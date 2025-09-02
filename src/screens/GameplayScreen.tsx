@@ -1,4 +1,4 @@
-import React, {useMemo, useState} from 'react';
+import React, {useEffect, useMemo, useState} from 'react';
 import {View, Text, StyleSheet, Button} from 'react-native';
 import type {NativeStackScreenProps} from '@react-navigation/native-stack';
 import {getCategoryContent} from '../games/content';
@@ -21,10 +21,18 @@ function getRandom<T>(arr: T[]) {
 export default function GameplayScreen({route}: Props) {
   const {gameId, categoryId, title} = route.params;
   const {t} = useTranslation();
-  const content = useMemo(() => getCategoryContent(gameId, categoryId), [gameId, categoryId]);
+  const content = useMemo(() => getCategoryContent(gameId, categoryId), [gameId, categoryId, t]);
   const [current, setCurrent] = useState<string | undefined>(() => getRandom(content));
   const nextPlayer = usePlayerStore(s => s.nextPlayer);
   const currentPlayer = getCurrentPlayerName();
+
+  useEffect(() => {
+    // when language/content changes, pick a new current item
+    if (content?.length) {
+      setCurrent(getRandom(content));
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [content]);
 
   function next() {
     setCurrent(getRandom(content));
@@ -51,4 +59,3 @@ const styles = StyleSheet.create({
   player: {marginTop: 12, fontStyle: 'italic'},
   row: {flexDirection: 'row', justifyContent: 'space-between', marginTop: 16},
 });
-
