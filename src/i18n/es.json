@@ -38,4 +38,16 @@
   "friendsParty": "Amigos y fiesta",
   "selfGrowth": "Crecimiento personal y reflexión",
   "familyGeneral": "Familia y general"
+  ,
+  "family": "Familia",
+  "friends": "Amigos",
+  "party": "Fiesta",
+  "daring": "Atrevido",
+  "action": "Acción",
+  "drunk": "Borrachos",
+  "sexual": "18+",
+  "classic": "Clásico",
+  "funny": "Divertido",
+  "hard": "Difícil",
+  "general": "General"
 }

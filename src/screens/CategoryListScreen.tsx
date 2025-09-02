@@ -46,9 +46,10 @@ export default function CategoryListScreen({route, navigation}: Props) {
         renderItem={({item}) => {
           const productId = categoryProductId(game.id, item.id);
           const locked = Boolean(item.premium) && !isUnlocked(productId);
+          const displayTitle = item.titleKey ? t(item.titleKey) : item.title;
           return (
             <CategoryCard
-              title={item.title + (item.premium ? ` (${t('premium')})` : '')}
+              title={displayTitle + (item.premium ? ` (${t('premium')})` : '')}
               locked={locked}
               onPress={() => {
                 if (locked) {
@@ -57,7 +58,7 @@ export default function CategoryListScreen({route, navigation}: Props) {
                   navigation.navigate('Gameplay', {
                     gameId: game.id,
                     categoryId: item.id,
-                    title: item.title,
+                    title: displayTitle,
                   });
                 }
               }}

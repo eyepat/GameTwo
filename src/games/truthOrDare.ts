@@ -1,8 +1,9 @@
 export type Category = {
   id: string;
   title: string;
+  titleKey?: string;
   premium?: boolean;
-  dataFile: string; // relative to src/categories/truthOrDare
+  dataFile: string; // relative to src/categories/<game>
 };
 
 export type GameDef = {
@@ -12,10 +13,10 @@ export type GameDef = {
 };
 
 const categories: Category[] = [
-  {id: 'family', title: 'Family', dataFile: 'family.json'},
-  {id: 'friends', title: 'Friends', dataFile: 'friends.json'},
-  {id: 'party', title: 'Party', premium: true, dataFile: 'party.json'},
-  {id: 'daring', title: 'Daring', premium: true, dataFile: 'daring.json'}
+  {id: 'family', title: 'Family', titleKey: 'family', dataFile: 'family.json'},
+  {id: 'friends', title: 'Friends', titleKey: 'friends', dataFile: 'friends.json'},
+  {id: 'party', title: 'Party', titleKey: 'party', premium: true, dataFile: 'party.json'},
+  {id: 'daring', title: 'Daring', titleKey: 'daring', premium: true, dataFile: 'daring.json'}
 ];
 
 export const truthOrDare: GameDef = {

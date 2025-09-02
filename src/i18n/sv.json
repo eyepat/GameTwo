@@ -38,4 +38,16 @@
   "friendsParty": "Vänner & fest",
   "selfGrowth": "Självutveckling & reflektion",
   "familyGeneral": "Familj & allmänt"
+  ,
+  "family": "Familj",
+  "friends": "Vänner",
+  "party": "Fest",
+  "daring": "Vågat",
+  "action": "Action",
+  "drunk": "Full",
+  "sexual": "18+",
+  "classic": "Klassisk",
+  "funny": "Rolig",
+  "hard": "Svår",
+  "general": "Allmänt"
 }

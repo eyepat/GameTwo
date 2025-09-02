@@ -2,6 +2,7 @@ import React, {useLayoutEffect, useMemo, useState} from 'react';
 import {View, Text, StyleSheet, FlatList, TouchableOpacity} from 'react-native';
 import {useTranslation} from 'react-i18next';
 import {gameGroups} from '../games/groups';
+import {games as allGames} from '../games';
 import type {NativeStackScreenProps} from '@react-navigation/native-stack';
 import GameCard from '../components/GameCard';
 import SettingsModal from '../components/SettingsModal';
@@ -48,7 +49,20 @@ export default function GroupGamesScreen({route, navigation}: Props) {
             icon={gameIcons[item.id]?.emoji}
             color={gameIcons[item.id]?.color}
             style={{flexBasis: '48%'}}
-            onPress={() => navigation.navigate('CategoryList', {gameId: item.id})}
+            onPress={() => {
+              const def = allGames.find(g => g.id === item.id);
+              if (def && def.categories.length === 1) {
+                const cat = def.categories[0] as any;
+                const title = cat.titleKey ? t(cat.titleKey) : cat.title;
+                navigation.navigate('Gameplay', {
+                  gameId: def.id,
+                  categoryId: cat.id,
+                  title,
+                });
+              } else {
+                navigation.navigate('CategoryList', {gameId: item.id});
+              }
+            }}
           />
         )}
         columnWrapperStyle={{justifyContent: 'space-between'}}

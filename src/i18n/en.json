@@ -38,4 +38,16 @@
   "friendsParty": "Friends & Party",
   "selfGrowth": "Self Growth & Reflection",
   "familyGeneral": "Family & General"
+  ,
+  "family": "Family",
+  "friends": "Friends",
+  "party": "Party",
+  "daring": "Daring",
+  "action": "Action",
+  "drunk": "Drunk",
+  "sexual": "18+",
+  "classic": "Classic",
+  "funny": "Funny",
+  "hard": "Hard",
+  "general": "General"
 }
