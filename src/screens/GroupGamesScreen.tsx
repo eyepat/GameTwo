@@ -5,6 +5,7 @@ import {gameGroups} from '../games/groups';
 import type {NativeStackScreenProps} from '@react-navigation/native-stack';
 import GameCard from '../components/GameCard';
 import SettingsModal from '../components/SettingsModal';
+import {gameIcons} from '../assets/icons';
 
 type RootStackParamList = {
   PlayerSetup: undefined;
@@ -40,12 +41,17 @@ export default function GroupGamesScreen({route, navigation}: Props) {
       <FlatList
         data={group.games}
         keyExtractor={item => item.id}
+        numColumns={2}
         renderItem={({item}) => (
           <GameCard
             title={t(item.titleKey)}
+            icon={gameIcons[item.id]?.emoji}
+            color={gameIcons[item.id]?.color}
+            style={{flexBasis: '48%'}}
             onPress={() => navigation.navigate('CategoryList', {gameId: item.id})}
           />
         )}
+        columnWrapperStyle={{justifyContent: 'space-between'}}
       />
       <SettingsModal visible={settingsOpen} onClose={() => setSettingsOpen(false)} />
     </View>
@@ -56,4 +62,3 @@ const styles = StyleSheet.create({
   container: {flex: 1, padding: 16},
   title: {fontSize: 22, fontWeight: '700', marginBottom: 8},
 });
-

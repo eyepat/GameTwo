@@ -9,39 +9,39 @@ export type GameGroup = {
 export const gameGroups: GameGroup[] = [
   {
     id: 'couples',
-    titleKey: 'couples',
+    titleKey: 'Couples',
     games: [
-      {id: 'betterTogether', titleKey: 'betterTogether'},
-      {id: 'karleksguide', titleKey: 'karleksguide'},
-      {id: 'couplesChat', titleKey: 'couplesChat'},
+      {id: 'betterTogether', titleKey: 'Better Together'},
+      {id: 'karleksguide', titleKey: 'Love guide'},
+      {id: 'couplesChat', titleKey: 'Couples Chat'},
     ],
   },
   {
     id: 'friendsParty',
-    titleKey: 'friendsParty',
+    titleKey: 'Friends Party',
     games: [
-      {id: 'questionsForHumans', titleKey: 'questionsForHumans'},
-      {id: 'beHonestOrGetDrunk', titleKey: 'beHonestOrGetDrunk'},
-      {id: 'drunkedApp', titleKey: 'drunkedApp'},
-      {id: 'neverHaveIEver', titleKey: 'neverHaveIEver'},
+      {id: 'questionsForHumans', titleKey: 'Questions For Humans'},
+      {id: 'beHonestOrGetDrunk', titleKey: 'Be Honest Or Get Drunk'},
+      {id: 'drunkedApp', titleKey: 'Drunked app'},
+      {id: 'neverHaveIEver', titleKey: 'Never Have I Ever'},
     ],
   },
   {
     id: 'selfGrowth',
-    titleKey: 'selfGrowth',
+    titleKey: 'Self Growth',
     games: [
-      {id: 'discoverYourself', titleKey: 'discoverYourself'},
+      {id: 'discoverYourself', titleKey: 'Discover Yourself'},
       {id: 'substance', titleKey: 'substance'},
-      {id: 'mindfulTalk', titleKey: 'mindfulTalk'},
+      {id: 'mindfulTalk', titleKey: 'Mind FulTalk'},
     ],
   },
   {
     id: 'familyGeneral',
-    titleKey: 'familyGeneral',
+    titleKey: 'Family',
     games: [
-      {id: 'smileTalk', titleKey: 'smileTalk'},
-      {id: 'howWellDoYouKnowMe', titleKey: 'howWellDoYouKnowMe'},
-      {id: 'riddleMeThis', titleKey: 'riddleMeThis'},
+      {id: 'smileTalk', titleKey: 'Smile Talk'},
+      {id: 'howWellDoYouKnowMe', titleKey: 'How Well Do You KnowMe'},
+      {id: 'riddleMeThis', titleKey: 'Riddle MeThis'},
     ],
   },
 ];

@@ -5,6 +5,7 @@ import {gameGroups} from '../games/groups';
 import type {NativeStackScreenProps} from '@react-navigation/native-stack';
 import SettingsModal from '../components/SettingsModal';
 import CategoryCard from '../components/CategoryCard';
+import {groupIcons} from '../assets/icons';
 
 type RootStackParamList = {
   PlayerSetup: undefined;
@@ -40,6 +41,8 @@ export default function MainCategoriesScreen({navigation}: Props) {
         renderItem={({item}) => (
           <CategoryCard
             title={t(item.titleKey)}
+            icon={groupIcons[item.id]?.emoji}
+            color={groupIcons[item.id]?.color}
             onPress={() => navigation.navigate('GroupGames', {groupId: item.id})}
           />
         )}
@@ -53,4 +56,3 @@ const styles = StyleSheet.create({
   container: {flex: 1, padding: 16},
   title: {fontSize: 22, fontWeight: '700', marginBottom: 8},
 });
-

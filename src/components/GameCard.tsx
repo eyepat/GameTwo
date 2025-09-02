@@ -1,27 +1,30 @@
 import React from 'react';
-import {TouchableOpacity, Text, StyleSheet, View} from 'react-native';
+import {TouchableOpacity, Text, StyleSheet, View, ViewStyle} from 'react-native';
 
-type Props = {title: string; onPress: () => void};
+type Props = {title: string; onPress: () => void; icon?: string; color?: string; style?: ViewStyle};
 
-export default function GameCard({title, onPress}: Props) {
+export default function GameCard({title, onPress, icon, color, style}: Props) {
   return (
-    <TouchableOpacity onPress={onPress} style={styles.card}>
-      <View>
-        <Text style={styles.title}>{title}</Text>
+    <TouchableOpacity onPress={onPress} style={[styles.card, style]}> 
+      <View style={[styles.iconWrap, {backgroundColor: color || '#F3F4F6'}]}>
+        <Text style={styles.iconText}>{icon ?? '🎮'}</Text>
       </View>
+      <Text style={styles.title}>{title}</Text>
     </TouchableOpacity>
   );
 }
 
 const styles = StyleSheet.create({
   card: {
-    padding: 16,
+    padding: 12,
     borderWidth: 1,
     borderColor: '#ddd',
-    borderRadius: 10,
-    marginVertical: 8,
+    borderRadius: 12,
+    margin: 6,
     backgroundColor: '#fff',
+    flex: 1,
   },
-  title: {fontSize: 18, fontWeight: '600'},
+  iconWrap: {width: '100%', aspectRatio: 1.4, borderRadius: 10, alignItems: 'center', justifyContent: 'center'},
+  iconText: {fontSize: 28},
+  title: {fontSize: 14, fontWeight: '600', marginTop: 8},
 });
-
