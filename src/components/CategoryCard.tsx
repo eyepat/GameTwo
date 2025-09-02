@@ -11,7 +11,7 @@ export default function CategoryCard({title, locked, onPress, icon, color}: Prop
           <Text style={styles.iconText}>{icon ?? '🎲'}</Text>
         </View>
         <Text style={styles.title}>{title}</Text>
-        {locked ? <Text style={styles.lock}>🔒</Text> : <View style={{width: 22}} />}
+        {locked ? <Text style={styles.lock}>🔒</Text> : <View style={{width: 48}} />}
       </View>
     </TouchableOpacity>
   );
@@ -19,18 +19,18 @@ export default function CategoryCard({title, locked, onPress, icon, color}: Prop
 
 const styles = StyleSheet.create({
   card: {
-    padding: 16,
+    paddingHorizontal: 16,
+    paddingVertical: 20,
     borderWidth: 1,
     borderColor: '#ddd',
-    borderRadius: 12,
-    marginVertical: 8,
+    borderRadius: 14,
+    marginVertical: 10,
     backgroundColor: '#fff',
   },
   locked: {opacity: 0.8},
-  row: {flexDirection: 'row', alignItems: 'center', gap: 12},
-  iconWrap: {width: 42, height: 42, borderRadius: 10, alignItems: 'center', justifyContent: 'center'},
-  iconText: {fontSize: 22},
-  title: {fontSize: 16, fontWeight: '600', flex: 1},
+  row: {flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 12},
+  iconWrap: {width: 48, height: 48, borderRadius: 10, alignItems: 'center', justifyContent: 'center'},
+  iconText: {fontSize: 24},
+  title: {fontSize: 18, fontWeight: '700', flex: 1, textAlign: 'center'},
   lock: {fontSize: 16},
 });
-
