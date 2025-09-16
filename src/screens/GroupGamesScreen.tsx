@@ -29,27 +29,9 @@ export default function GroupGamesScreen({route, navigation}: Props) {
     categoryId: string;
     title: string;
   } | null>(null);
-  const doodles = useMemo(
-    () => [
-      {id: 'd1', icon: '🦋', position: styles.mindfulDoodleTopLeft},
-      {id: 'd2', icon: '🍦', position: styles.mindfulDoodleTopRight},
-      {id: 'd3', icon: '❤️', position: styles.mindfulDoodleBottomLeft},
-      {id: 'd4', icon: '⭐', position: styles.mindfulDoodleBottomRight},
-      {id: 'd5', icon: '🦄', position: styles.mindfulDoodleMidLeft},
-      {id: 'd6', icon: '🌟', position: styles.mindfulDoodleMidRight},
-      {id: 'd7', icon: '🍭', position: styles.mindfulDoodleMidTop},
-      {id: 'd8', icon: '🎈', position: styles.mindfulDoodleMidBottom},
-      {id: 'd9', icon: '✨', position: styles.mindfulDoodleNearBadge},
-    ],
-    [],
-  );
-
   const mindfulPreview = useMemo(
     () => (
       <View style={styles.mindfulCanvas}>
-        {doodles.map(d => (
-          <Text key={d.id} style={[styles.mindfulDoodle, d.position]}>{d.icon}</Text>
-        ))}
         <View style={styles.mindfulBadgeGrid}>
           {[
             {id: 'kanslor', key: 'mindfulCategories.kanslor', color: '#FECACA'},
@@ -64,7 +46,7 @@ export default function GroupGamesScreen({route, navigation}: Props) {
         </View>
       </View>
     ),
-    [t, doodles],
+    [t],
   );
 
   useLayoutEffect(() => {
@@ -197,18 +179,4 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   mindfulBadgeText: {fontSize: 12, fontWeight: '700', color: '#111827', textAlign: 'center'},
-  mindfulDoodle: {
-    position: 'absolute',
-    fontSize: 18,
-    opacity: 0.8,
-  },
-  mindfulDoodleTopLeft: {top: 6, left: 10},
-  mindfulDoodleTopRight: {top: 10, right: 12},
-  mindfulDoodleBottomLeft: {bottom: 12, left: 14},
-  mindfulDoodleBottomRight: {bottom: 14, right: 12},
-  mindfulDoodleMidLeft: {top: '20%', left: 6},
-  mindfulDoodleMidRight: {top: '78%', right: 6},
-  mindfulDoodleMidTop: {top: '35%', left: '18%'},
-  mindfulDoodleMidBottom: {top: '55%', right: '20%'},
-  mindfulDoodleNearBadge: {top: '68%', left: '60%'},
 });
