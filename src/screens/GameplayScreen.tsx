@@ -49,6 +49,7 @@ export default function GameplayScreen({route, navigation}: Props) {
   const {gameId, categoryId, title} = route.params;
   const {t} = useTranslation();
   const isMindful = gameId === 'mindfulTalk';
+  const screenTitle = isMindful ? t('mindfulTalk') : title;
   const content = useMemo(
     () => (isMindful ? [] : getCategoryContent(gameId, categoryId)),
     [gameId, categoryId, isMindful, t],
@@ -149,7 +150,7 @@ export default function GameplayScreen({route, navigation}: Props) {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>{title}</Text>
+      <Text style={styles.title}>{screenTitle}</Text>
       {isMindful ? (
         <>
           <Text style={styles.playerMessage}>
@@ -188,7 +189,11 @@ export default function GameplayScreen({route, navigation}: Props) {
               </TouchableOpacity>
             ))}
           </View>
-          {current ? <Text style={styles.card}>{current}</Text> : null}
+          {current ? (
+            <View style={styles.cardContainer}>
+              <Text style={styles.cardText}>{current}</Text>
+            </View>
+          ) : null}
           {current ? (
             <View style={styles.row}>
               <Button title={t('another')} onPress={handleAnother} />
@@ -198,7 +203,11 @@ export default function GameplayScreen({route, navigation}: Props) {
         </>
       ) : (
         <>
-          {current ? <Text style={styles.card}>{current}</Text> : null}
+          {current ? (
+            <View style={styles.cardContainer}>
+              <Text style={styles.cardText}>{current}</Text>
+            </View>
+          ) : null}
           <Text style={styles.player}>{t('currentPlayer', {name: currentPlayer || '-'})}</Text>
           <View style={styles.row}>
             <Button title={t('another')} onPress={handleAnother} />
@@ -214,7 +223,20 @@ export default function GameplayScreen({route, navigation}: Props) {
 const styles = StyleSheet.create({
   container: {flex: 1, padding: 16, gap: 12},
   title: {fontSize: 22, fontWeight: '700'},
-  card: {marginTop: 8, fontSize: 18},
+  cardContainer: {
+    marginTop: 16,
+    padding: 20,
+    backgroundColor: '#FFFFFF',
+    borderRadius: 16,
+    borderWidth: 1,
+    borderColor: '#E5E7EB',
+    shadowColor: '#111827',
+    shadowOpacity: 0.08,
+    shadowRadius: 8,
+    shadowOffset: {width: 0, height: 4},
+    elevation: 2,
+  },
+  cardText: {fontSize: 18, lineHeight: 26, color: '#111827', textAlign: 'center'},
   player: {marginTop: 12, fontStyle: 'italic'},
   row: {flexDirection: 'row', justifyContent: 'space-between', marginTop: 16},
   playerMessage: {marginTop: 12, fontSize: 16},

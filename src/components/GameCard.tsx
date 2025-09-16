@@ -1,13 +1,20 @@
-import React from 'react';
+import React, {ReactNode} from 'react';
 import {TouchableOpacity, Text, StyleSheet, View, ViewStyle} from 'react-native';
 
-type Props = {title: string; onPress: () => void; icon?: string; color?: string; style?: ViewStyle};
+type Props = {
+  title: string;
+  onPress: () => void;
+  icon?: string;
+  color?: string;
+  style?: ViewStyle;
+  preview?: ReactNode;
+};
 
-export default function GameCard({title, onPress, icon, color, style}: Props) {
+export default function GameCard({title, onPress, icon, color, style, preview}: Props) {
   return (
     <TouchableOpacity onPress={onPress} style={[styles.card, style]}> 
       <View style={[styles.iconWrap, {backgroundColor: color || '#F3F4F6'}]}>
-        <Text style={styles.iconText}>{icon ?? '🎮'}</Text>
+        {preview ? preview : <Text style={styles.iconText}>{icon ?? '🎮'}</Text>}
       </View>
       <Text style={styles.title}>{title}</Text>
     </TouchableOpacity>

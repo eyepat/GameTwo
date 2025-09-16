@@ -29,6 +29,23 @@ export default function GroupGamesScreen({route, navigation}: Props) {
     categoryId: string;
     title: string;
   } | null>(null);
+  const mindfulPreview = useMemo(
+    () => (
+      <View style={styles.mindfulPreviewWrapper}>
+        {[
+          {id: 'kanslor', key: 'mindfulCategories.kanslor', color: '#FECACA'},
+          {id: 'nyfikenhet', key: 'mindfulCategories.nyfikenhet', color: '#FEF08A'},
+          {id: 'mindfulness', key: 'mindfulCategories.mindfulness', color: '#BFDBFE'},
+          {id: 'blandad', key: 'mindfulCategories.blandad', color: '#EDE9FE'},
+        ].map(cat => (
+          <View key={cat.id} style={[styles.mindfulTile, {backgroundColor: cat.color}]}> 
+            <Text style={styles.mindfulTileText}>{t(cat.key)}</Text>
+          </View>
+        ))}
+      </View>
+    ),
+    [t],
+  );
 
   useLayoutEffect(() => {
     navigation.setOptions({
@@ -55,6 +72,7 @@ export default function GroupGamesScreen({route, navigation}: Props) {
             icon={gameIcons[item.id]?.emoji}
             color={gameIcons[item.id]?.color}
             style={{flexBasis: '48%'}}
+            preview={item.id === 'mindfulTalk' ? mindfulPreview : undefined}
             onPress={() => {
               const def = allGames.find(g => g.id === item.id);
               if (def && def.categories.length === 1) {
@@ -135,4 +153,17 @@ const styles = StyleSheet.create({
     borderRadius: 8,
   },
   modalButtonText: {color: '#fff', fontSize: 16, fontWeight: '700'},
+  mindfulPreviewWrapper: {
+    width: '100%',
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    justifyContent: 'center',
+    gap: 8,
+  },
+  mindfulTile: {
+    paddingVertical: 8,
+    paddingHorizontal: 12,
+    borderRadius: 8,
+  },
+  mindfulTileText: {fontSize: 12, fontWeight: '600', color: '#111827'},
 });
