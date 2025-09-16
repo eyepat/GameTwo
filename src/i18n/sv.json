@@ -49,5 +49,15 @@
   "classic": "Klassisk",
   "funny": "Rolig",
   "hard": "Svår",
-  "general": "Allmänt"
+  "general": "Allmänt",
+  "ok": "OK!",
+  "mindfulTalkIntro": "Spelet har fyra kategorier och deltagarna ska i rätt ordning få välja en kategori som de kommer att få en fråga ifrån där de läser högt för andra spelare och sedan svarar själv på.",
+  "mindfulTurnPrompt": "{{name}}s tur – välj en av kategorierna.",
+  "mindfulTurnPromptNoName": "Din tur – välj en av kategorierna.",
+  "mindfulCategories": {
+    "kanslor": "Känslor",
+    "nyfikenhet": "Nyfikenhet",
+    "mindfulness": "Mindfulness",
+    "blandad": "Blandad"
+  }
 }

@@ -49,5 +49,15 @@
   "classic": "Classic",
   "funny": "Funny",
   "hard": "Hard",
-  "general": "General"
+  "general": "General",
+  "ok": "OK!",
+  "mindfulTalkIntro": "The game has four categories and players take turns picking one. They read the question aloud to everyone and then answer it themselves.",
+  "mindfulTurnPrompt": "{{name}}'s turn – choose a category.",
+  "mindfulTurnPromptNoName": "Your turn – choose a category.",
+  "mindfulCategories": {
+    "kanslor": "Feelings",
+    "nyfikenhet": "Curiosity",
+    "mindfulness": "Mindfulness",
+    "blandad": "Mixed"
+  }
 }

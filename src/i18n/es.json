@@ -49,5 +49,15 @@
   "classic": "Clásico",
   "funny": "Divertido",
   "hard": "Difícil",
-  "general": "General"
+  "general": "General",
+  "ok": "¡OK!",
+  "mindfulTalkIntro": "El juego tiene cuatro categorías y los participantes, por turnos, eligen una. Leen la pregunta en voz alta a los demás jugadores y luego responden ellos mismos.",
+  "mindfulTurnPrompt": "Es el turno de {{name}}: elige una categoría.",
+  "mindfulTurnPromptNoName": "Es tu turno: elige una categoría.",
+  "mindfulCategories": {
+    "kanslor": "Emociones",
+    "nyfikenhet": "Curiosidad",
+    "mindfulness": "Atención plena",
+    "blandad": "Mixta"
+  }
 }

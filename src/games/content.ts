@@ -113,11 +113,26 @@ const data: Record<string, Record<string, LangMap>> = {
     general: { en: require('../categories/substance/general.json') },
   },
   mindfulTalk: {
-    general: { en: require('../categories/mindfulTalk/general.json') },
-    kanslor: { en: require('../categories/mindfulTalk/kanslor.json') },
-    nyfikenhet: { en: require('../categories/mindfulTalk/nyfikenhet.json') },
-    mindfulness: { en: require('../categories/mindfulTalk/mindfulness.json') },
-    blandad: { en: require('../categories/mindfulTalk/blandad.json') },
+    general: {
+      en: require('../categories/mindfulTalk/general.json'),
+      sv: require('../categories/mindfulTalk/general.sv.json'),
+    },
+    kanslor: {
+      en: require('../categories/mindfulTalk/kanslor.en.json'),
+      sv: require('../categories/mindfulTalk/kanslor.sv.json'),
+    },
+    nyfikenhet: {
+      en: require('../categories/mindfulTalk/nyfikenhet.en.json'),
+      sv: require('../categories/mindfulTalk/nyfikenhet.sv.json'),
+    },
+    mindfulness: {
+      en: require('../categories/mindfulTalk/mindfulness.en.json'),
+      sv: require('../categories/mindfulTalk/mindfulness.sv.json'),
+    },
+    blandad: {
+      en: require('../categories/mindfulTalk/blandad.en.json'),
+      sv: require('../categories/mindfulTalk/blandad.sv.json'),
+    },
   },
   smileTalk: {
     general: { en: require('../categories/smileTalk/general.json') },

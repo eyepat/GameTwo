@@ -90,9 +90,7 @@ export default function GroupGamesScreen({route, navigation}: Props) {
         }}>
         <View style={styles.modalOverlay}>
           <View style={styles.modalContent}>
-            <Text style={styles.modalText}>
-              Spelet har fem kategorier och deltagarna ska i rättordning få välja en kategori som de kommer att få en fråga ifrån där de läser högt för andra spelare och svara på.
-            </Text>
+            <Text style={styles.modalText}>{t('mindfulTalkIntro')}</Text>
             <TouchableOpacity
               style={styles.modalButton}
               onPress={() => {
@@ -102,7 +100,7 @@ export default function GroupGamesScreen({route, navigation}: Props) {
                 setMindfulInfoVisible(false);
                 setPendingStart(null);
               }}>
-              <Text style={styles.modalButtonText}>OK!</Text>
+              <Text style={styles.modalButtonText}>{t('ok')}</Text>
             </TouchableOpacity>
           </View>
         </View>

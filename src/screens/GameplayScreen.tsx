@@ -19,6 +19,32 @@ function getRandom<T>(arr: T[]) {
   return arr[Math.floor(Math.random() * arr.length)];
 }
 
+const mindfulCategoryThemes: Record<
+  string,
+  {background: string; activeBackground?: string; textColor?: string; activeTextColor?: string}
+> = {
+  kanslor: {
+    background: '#FECACA',
+    activeBackground: '#FCA5A5',
+    textColor: '#111827',
+  },
+  nyfikenhet: {
+    background: '#FEF08A',
+    activeBackground: '#FACC15',
+    textColor: '#111827',
+  },
+  mindfulness: {
+    background: '#BFDBFE',
+    activeBackground: '#93C5FD',
+    textColor: '#111827',
+  },
+  blandad: {
+    background: '#EDE9FE',
+    activeBackground: '#C4B5FD',
+    textColor: '#111827',
+  },
+};
+
 export default function GameplayScreen({route, navigation}: Props) {
   const {gameId, categoryId, title} = route.params;
   const {t} = useTranslation();
@@ -27,18 +53,15 @@ export default function GameplayScreen({route, navigation}: Props) {
     () => (isMindful ? [] : getCategoryContent(gameId, categoryId)),
     [gameId, categoryId, isMindful, t],
   );
-  const mindfulCategories = useMemo(
-    () =>
-      isMindful
-        ? [
-            {id: 'kanslor', label: 'Känslor'},
-            {id: 'nyfikenhet', label: 'Nyfikenhet'},
-            {id: 'mindfulness', label: 'Mindfulness'},
-            {id: 'blandad', label: 'Blandad'},
-          ]
-        : [],
-    [isMindful],
-  );
+  const mindfulCategories = useMemo(() => {
+    if (!isMindful) return [] as {id: string; titleKey: string}[];
+    return [
+      {id: 'kanslor', titleKey: 'mindfulCategories.kanslor'},
+      {id: 'nyfikenhet', titleKey: 'mindfulCategories.nyfikenhet'},
+      {id: 'mindfulness', titleKey: 'mindfulCategories.mindfulness'},
+      {id: 'blandad', titleKey: 'mindfulCategories.blandad'},
+    ];
+  }, [isMindful]);
   const mindfulContent = useMemo(() => {
     if (!isMindful) return {} as Record<string, string[]>;
     return mindfulCategories.reduce<Record<string, string[]>>((acc, cat) => {
@@ -131,8 +154,8 @@ export default function GameplayScreen({route, navigation}: Props) {
         <>
           <Text style={styles.playerMessage}>
             {currentPlayer
-              ? `${currentPlayer}s tur – välj en av kategorierna.`
-              : t('currentPlayer', {name: '-'})}
+              ? t('mindfulTurnPrompt', {name: currentPlayer})
+              : t('mindfulTurnPromptNoName')}
           </Text>
           <View style={styles.categoryGrid}>
             {mindfulCategories.map(cat => (
@@ -140,15 +163,27 @@ export default function GameplayScreen({route, navigation}: Props) {
                 key={cat.id}
                 style={[
                   styles.categoryButton,
-                  selectedCategory === cat.id && styles.categoryButtonActive,
+                  {backgroundColor: mindfulCategoryThemes[cat.id]?.background ?? '#E5E7EB'},
+                  selectedCategory === cat.id && [
+                    styles.categoryButtonActive,
+                    mindfulCategoryThemes[cat.id]?.activeBackground
+                      ? {backgroundColor: mindfulCategoryThemes[cat.id]?.activeBackground}
+                      : null,
+                  ],
                 ]}
                 onPress={() => handleCategorySelect(cat.id)}>
                 <Text
                   style={[
                     styles.categoryButtonText,
-                    selectedCategory === cat.id && styles.categoryButtonTextActive,
+                    mindfulCategoryThemes[cat.id]?.textColor
+                      ? {color: mindfulCategoryThemes[cat.id]?.textColor}
+                      : null,
+                    selectedCategory === cat.id &&
+                      mindfulCategoryThemes[cat.id]?.activeTextColor
+                      ? {color: mindfulCategoryThemes[cat.id]?.activeTextColor}
+                      : null,
                   ]}>
-                  {cat.label}
+                  {t(cat.titleKey)}
                 </Text>
               </TouchableOpacity>
             ))}
@@ -189,8 +224,9 @@ const styles = StyleSheet.create({
     paddingHorizontal: 16,
     borderRadius: 10,
     backgroundColor: '#E5E7EB',
+    borderWidth: 2,
+    borderColor: 'transparent',
   },
-  categoryButtonActive: {backgroundColor: '#111827'},
+  categoryButtonActive: {borderColor: '#111827'},
   categoryButtonText: {fontSize: 16, fontWeight: '600'},
-  categoryButtonTextActive: {color: '#FFFFFF'},
 });
