@@ -115,8 +115,8 @@ export default function CategoryListScreen({route, navigation}: Props) {
 }
 
 const styles = StyleSheet.create({
-  container: {flex: 1, padding: 16},
-  title: {fontSize: 22, fontWeight: '700', marginBottom: 8},
+  container: {flex: 1, padding: 16, backgroundColor: '#111827'},
+  title: {fontSize: 22, fontWeight: '700', marginBottom: 8, color: '#F9FAFB'},
   modalOverlay: {
     flex: 1,
     backgroundColor: 'rgba(0, 0, 0, 0.4)',

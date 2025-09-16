@@ -13,7 +13,7 @@ type Props = {
 export default function GameCard({title, onPress, icon, color, style, preview}: Props) {
   return (
     <TouchableOpacity onPress={onPress} style={[styles.card, style]}> 
-      <View style={[styles.iconWrap, {backgroundColor: color || '#F3F4F6'}]}>
+      <View style={[styles.iconWrap, {backgroundColor: color || '#374151'}]}>
         {preview ? preview : <Text style={styles.iconText}>{icon ?? '🎮'}</Text>}
       </View>
       <Text style={styles.title}>{title}</Text>
@@ -25,13 +25,19 @@ const styles = StyleSheet.create({
   card: {
     padding: 12,
     borderWidth: 1,
-    borderColor: '#ddd',
+    borderColor: '#374151',
     borderRadius: 12,
     margin: 6,
-    backgroundColor: '#fff',
+    backgroundColor: '#1F2937',
     flex: 1,
   },
-  iconWrap: {width: '100%', aspectRatio: 1.4, borderRadius: 10, alignItems: 'center', justifyContent: 'center'},
-  iconText: {fontSize: 28},
-  title: {fontSize: 14, fontWeight: '600', marginTop: 8},
+  iconWrap: {
+    width: '100%',
+    aspectRatio: 1.4,
+    borderRadius: 10,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  iconText: {fontSize: 28, color: '#F9FAFB'},
+  title: {fontSize: 14, fontWeight: '600', marginTop: 8, color: '#F9FAFB', textAlign: 'center'},
 });

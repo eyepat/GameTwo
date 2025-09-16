@@ -196,8 +196,12 @@ export default function GameplayScreen({route, navigation}: Props) {
           ) : null}
           {current ? (
             <View style={styles.row}>
-              <Button title={t('another')} onPress={handleAnother} />
-              <Button title={t('next')} onPress={handleNext} />
+              <TouchableOpacity onPress={handleAnother}>
+                <Text style={styles.textButton}>{t('another')}</Text>
+              </TouchableOpacity>
+              <TouchableOpacity onPress={handleNext}>
+                <Text style={styles.textButton}>{`${t('next')}>`}</Text>
+              </TouchableOpacity>
             </View>
           ) : null}
         </>
@@ -210,8 +214,12 @@ export default function GameplayScreen({route, navigation}: Props) {
           ) : null}
           <Text style={styles.player}>{t('currentPlayer', {name: currentPlayer || '-'})}</Text>
           <View style={styles.row}>
-            <Button title={t('another')} onPress={handleAnother} />
-            <Button title={t('next')} onPress={handleNext} />
+            <TouchableOpacity onPress={handleAnother}>
+              <Text style={styles.textButton}>{t('another')}</Text>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={handleNext}>
+              <Text style={styles.textButton}>{`${t('next')}>`}</Text>
+            </TouchableOpacity>
           </View>
         </>
       )}
@@ -221,8 +229,8 @@ export default function GameplayScreen({route, navigation}: Props) {
 }
 
 const styles = StyleSheet.create({
-  container: {flex: 1, padding: 16, gap: 12},
-  title: {fontSize: 22, fontWeight: '700'},
+  container: {flex: 1, padding: 16, gap: 12, backgroundColor: '#111827'},
+  title: {fontSize: 22, fontWeight: '700', color: '#F9FAFB'},
   cardContainer: {
     marginTop: 16,
     padding: 20,
@@ -237,9 +245,9 @@ const styles = StyleSheet.create({
     elevation: 2,
   },
   cardText: {fontSize: 18, lineHeight: 26, color: '#111827', textAlign: 'center'},
-  player: {marginTop: 12, fontStyle: 'italic'},
+  player: {marginTop: 12, fontStyle: 'italic', color: '#F9FAFB'},
   row: {flexDirection: 'row', justifyContent: 'space-between', marginTop: 16},
-  playerMessage: {marginTop: 12, fontSize: 16},
+  playerMessage: {marginTop: 12, fontSize: 16, color: '#F9FAFB'},
   categoryGrid: {marginTop: 16, flexDirection: 'row', flexWrap: 'wrap', gap: 12},
   categoryButton: {
     paddingVertical: 12,
@@ -249,6 +257,7 @@ const styles = StyleSheet.create({
     borderWidth: 2,
     borderColor: 'transparent',
   },
-  categoryButtonActive: {borderColor: '#111827'},
+  categoryButtonActive: {borderColor: '#F9FAFB'},
   categoryButtonText: {fontSize: 16, fontWeight: '600'},
+  textButton: {fontSize: 18, fontWeight: '600', color: '#F9FAFB'},
 });
