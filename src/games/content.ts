@@ -114,6 +114,10 @@ const data: Record<string, Record<string, LangMap>> = {
   },
   mindfulTalk: {
     general: { en: require('../categories/mindfulTalk/general.json') },
+    kanslor: { en: require('../categories/mindfulTalk/kanslor.json') },
+    nyfikenhet: { en: require('../categories/mindfulTalk/nyfikenhet.json') },
+    mindfulness: { en: require('../categories/mindfulTalk/mindfulness.json') },
+    blandad: { en: require('../categories/mindfulTalk/blandad.json') },
   },
   smileTalk: {
     general: { en: require('../categories/smileTalk/general.json') },
